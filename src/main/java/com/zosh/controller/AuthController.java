@@ -75,8 +75,8 @@ public class AuthController {
         return new ResponseEntity<>(authResponse, HttpStatus.CREATED);
     }
 
-
-public  ResponseEntity<AuthResponse> signin(@RequestBody LoginRequest req){
+ @PostMapping("/signing")
+public  ResponseEntity<AuthResponse> signing(@RequestBody LoginRequest req){
 
 
 
