@@ -14,6 +14,9 @@ import java.util.*;
 
 public class JwtProvider {
     private SecretKey key= Keys.hmacShaKeyFor(JwtConstant.SECRET_KEY.getBytes());
+
+
+    // generate the token 
     public String generateToken(Authentication auth){
 
         Collection<? extends GrantedAuthority>authorities=auth.getAuthorities();
@@ -27,6 +30,8 @@ public class JwtProvider {
         return jwt;
     }
 
+    // extracting  email from the token 
+    
     public String getEmailFromJwtToken(String jwt){
         jwt =jwt.substring(7);
 
